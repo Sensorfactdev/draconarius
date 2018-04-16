@@ -1,0 +1,10 @@
+{
+  "name": "@sensorfactdev/draconarius",
+  "version": "0.0.1",
+  "description": "Manage (feature)flags like a Roman soldier\"",
+  "main": "index.js",
+  "repository": "https://github.com/Sensorfactdev/draconarius",
+  "author": "Ramon Gebben <ramon@sensorfact.nl>",
+  "license": "MIT",
+  "private": false
+}
