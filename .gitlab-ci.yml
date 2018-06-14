@@ -1,0 +1,16 @@
+image: node:8.11.3
+
+cache:
+  paths:
+  - node_modules/
+
+before_script:
+  # If you need private dependencies, configure NPM_TOKEN in repository's
+  # settings
+  # - npm config -s set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+  - yarn
+
+test:
+  stage: test
+  script: yarn test
+  coverage: /^All files\s+\|\s+(\d+(?:\.\d+)*).+/
