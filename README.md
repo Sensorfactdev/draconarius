@@ -1,4 +1,6 @@
 # Draconarius
+[![Build Status](https://travis-ci.org/Sensorfactdev/draconarius.svg?branch=master)](https://travis-ci.org/Sensorfactdev/draconarius)
+
 Manage (feature)flags like a Roman soldier
 
 ## Install
