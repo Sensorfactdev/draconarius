@@ -1,5 +1,6 @@
 # Draconarius
 [![Build Status](https://travis-ci.org/Sensorfactdev/draconarius.svg?branch=master)](https://travis-ci.org/Sensorfactdev/draconarius)
+[![Coverage Status](https://coveralls.io/repos/github/Sensorfactdev/draconarius/badge.svg?branch=master)](https://coveralls.io/github/Sensorfactdev/draconarius?branch=master)
 
 Manage (feature)flags like a Roman soldier
 
