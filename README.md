@@ -51,3 +51,9 @@ const navigation = draconarius.isEnabled('hasOpenPayments', [user])
   ? browserHistory.replace('/new-payment/832763877832');
   : browserHistory.replace('/open-payment/98766789023')
 ```
+
+## Other resources
+
+- [API Reference](API.md)
+- [LICENSE](LICENSE)
+- [Sensorfact](https://sensorfact.nl)

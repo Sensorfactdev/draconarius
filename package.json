@@ -2,13 +2,14 @@
   "name": "@sensorfactdev/draconarius",
   "version": "0.0.1",
   "description": "Manage (feature)flags like a Roman soldier\"",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": "https://github.com/Sensorfactdev/draconarius",
   "author": "Ramon Gebben <ramon@sensorfact.nl>",
   "license": "MIT",
   "private": false,
   "scripts": {
     "test": "jest --coverage",
+    "docs": "jsdoc2md ./lib/index.js > API.md",
     "test-travis": "yarn test && cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
@@ -33,5 +34,8 @@
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "jest-junit": "^5.0.0"
+  },
+  "dependencies": {
+    "jsdoc-to-markdown": "^4.0.1"
   }
 }
