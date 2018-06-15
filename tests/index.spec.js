@@ -1,4 +1,4 @@
-const { Draconarius } = require('../lib/index');
+const { Draconarius } = require('../lib');
 
 describe('Draconarius', () => {
   it('should be able to get the version of Draconarius', () => {
