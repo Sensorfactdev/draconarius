@@ -1,0 +1,6 @@
+tests
+reports
+coverage
+.vscode
+.eslintrc
+.travis

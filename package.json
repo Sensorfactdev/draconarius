@@ -10,6 +10,7 @@
   "scripts": {
     "test": "jest --coverage",
     "docs": "jsdoc2md ./lib/index.js > API.md",
+    "prepublish": "yarn test; yarn docs;",
     "test-travis": "yarn test && cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
@@ -33,9 +34,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
-    "jest-junit": "^5.0.0"
-  },
-  "dependencies": {
+    "jest-junit": "^5.0.0",
     "jsdoc-to-markdown": "^4.0.1"
   }
 }

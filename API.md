@@ -7,6 +7,7 @@
     * _instance_
         * [.isEnabled(flag, ...args)](#Draconarius+isEnabled) ⇒ <code>boolean</code>
         * [.updateFlag(flag, value)](#Draconarius+updateFlag)
+        * [.getAllFlags()](#Draconarius+getAllFlags) ⇒ <code>object</code>
     * _static_
         * [.Draconarius](#Draconarius.Draconarius)
             * [new Draconarius(flags)](#new_Draconarius.Draconarius_new)
@@ -28,7 +29,7 @@ isEnabled - To check if a flag is raised(enabled)
 <a name="Draconarius+updateFlag"></a>
 
 ### draconarius.updateFlag(flag, value)
-updateFlag
+updateFlag - Update flag(s)
 
 **Kind**: instance method of [<code>Draconarius</code>](#Draconarius)  
 
@@ -37,6 +38,13 @@ updateFlag
 | flag | <code>string</code> \| <code>array</code> | The flag or flags you want to check |
 | value | <code>function</code> \| <code>boolean</code> |  |
 
+<a name="Draconarius+getAllFlags"></a>
+
+### draconarius.getAllFlags() ⇒ <code>object</code>
+getAllFlags - Get all the flags currently set
+
+**Kind**: instance method of [<code>Draconarius</code>](#Draconarius)  
+**Returns**: <code>object</code> - All flags  
 <a name="Draconarius.Draconarius"></a>
 
 ### Draconarius.Draconarius

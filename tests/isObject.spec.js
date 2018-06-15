@@ -1,4 +1,4 @@
-const isObject = require('./isObject');
+const isObject = require('../lib/isObject');
 
 describe.only('isObject', () => {
   it('should return false for null', () => expect(isObject(null)).toBe(false));

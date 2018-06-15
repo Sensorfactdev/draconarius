@@ -4,6 +4,8 @@
 
 Manage (feature)flags like a Roman soldier
 
+<img src="https://i.imgur.com/zbPPBek.png" />
+
 ## Install
 
 ```bash
@@ -38,7 +40,7 @@ const { pathOr } = require('ramda');
 const { Draconarius } = require('@sensorfactdev/draconarius');
 
 const flags = {
-  hasOpenPayments: (args) => pathOr(false, [0, 'metaData', 'hasOpenPayments'], args),
+  hasOpenPayments: user => pathOr(false, ['metaData', 'hasOpenPayments'], user),
 };
 
 const draconarius = new Draconarius(flags);
@@ -47,9 +49,40 @@ const user = {
   metaData: { hasOpenPayments: false },
 };
 
-const navigation = draconarius.isEnabled('hasOpenPayments', [user])
+const navigation = draconarius.isEnabled('hasOpenPayments', user)
   ? browserHistory.replace('/new-payment/832763877832');
   : browserHistory.replace('/open-payment/98766789023')
+```
+
+### Updating flags
+
+```javascript
+const { Draconarius } = require('@sensorfactdev/draconarius');
+
+const flags = {
+  foo: true,
+  bar: false
+};
+
+const draconarius = new Draconarius(flags);
+
+// Update a signle flag
+draconarius.updateFlag('foo', false);
+
+// Update multiple flags and add one
+draconarius.updateFlag({ foo: true, bar: true, fizz: f => !f });
+```
+
+### Getting all flags
+
+```javascript
+const { Draconarius } = require('@sensorfactdev/draconarius');
+const { equals } = require('ramda');
+
+const flags = { foo: true, bar: false };
+const draconarius = new Draconarius(flags);
+
+console.log(equals(draconarius.getAllFlags(), flags)) // true;
 ```
 
 ## Other resources
