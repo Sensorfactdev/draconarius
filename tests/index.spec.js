@@ -1,4 +1,4 @@
-const { Draconarius } = require('./index');
+const { Draconarius } = require('../lib/index');
 
 describe('Draconarius', () => {
   it('should be able to get the version of Draconarius', () => {
@@ -78,6 +78,13 @@ describe('Draconarius', () => {
       const instance = new Draconarius({});
 
       expect((() => instance.updateFlag(failFlags))).toThrow(new TypeError('_setFlag expects `value` to be a boolean or function but received `null`'));
+    });
+
+    it('should be able to get all flags', () => {
+      const flags = { foo: true, bar: false, fizz: f => !f };
+
+      const instance = new Draconarius(flags);
+      expect(instance.getAllFlags()).toEqual(flags);
     });
   });
 
