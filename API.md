@@ -57,7 +57,7 @@ Creates an instance of Draconarius.
 
 | Param | Type |
 | --- | --- |
-| flags | <code>object</code> | 
+| flags | <code>object</code> \| <code>array</code> | 
 
 <a name="Draconarius.version"></a>
 
