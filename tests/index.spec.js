@@ -10,19 +10,23 @@ describe('Draconarius', () => {
     expect(instance).toBeInstanceOf(Draconarius);
   });
 
-  it('should throw a TypeError when no flags are provided', () => {
-    expect((() => new Draconarius())).toThrow(new TypeError('Draconarius constructor expects flags to be an object but received `undefined`'));
+  it('should throw a TypeError when wrong type of flags are provided', () => {
+    expect((() => new Draconarius(null))).toThrow(new TypeError('Draconarius constructor expects flags to be an object or an array of strings, but received `null`'));
+    expect((() => new Draconarius('pizza'))).toThrow(new TypeError('Draconarius constructor expects flags to be an object or an array of strings, but received `"pizza"`'));
   });
 
-  it('should throw a TypeError when wrong type of flags are provided', () => {
-    expect((() => new Draconarius(null))).toThrow(new TypeError('Draconarius constructor expects flags to be an object but received `null`'));
-    expect((() => new Draconarius([]))).toThrow(new TypeError('Draconarius constructor expects flags to be an object but received `[]`'));
-    expect((() => new Draconarius('pizza'))).toThrow(new TypeError('Draconarius constructor expects flags to be an object but received `"pizza"`'));
+  it('should be able to parse arrays of strings into flag objects', () => {
+    const instance = new Draconarius(['foo', 'bar']);
+    expect(instance.flags).toEqual({ foo: true, bar: true });
   });
 
   describe('Setting and getting flags', () => {
     it('should be able to check flags to be true', () => {
       const instance = new Draconarius({ foo: true, bar: false });
+      expect(instance.isEnabled('foo')).toBe(true);
+    });
+    it('should be able to check flags to be true when provided as an array of string', () => {
+      const instance = new Draconarius(['foo', 'bar']);
       expect(instance.isEnabled('foo')).toBe(true);
     });
     it('should be able to check flags to be false', () => {
@@ -31,6 +35,14 @@ describe('Draconarius', () => {
     });
     it('should be able to check unknown flags as false', () => {
       const instance = new Draconarius({ foo: true, bar: false });
+      expect(instance.isEnabled('kitty')).toBe(false);
+    });
+    it('should be able to check flags as false when provided with none', () => {
+      const instance = new Draconarius(undefined);
+      expect(instance.isEnabled('kitty')).toBe(false);
+    });
+    it('should be able to check flags as false when provided with an empty array', () => {
+      const instance = new Draconarius([]);
       expect(instance.isEnabled('kitty')).toBe(false);
     });
     it('should be able to check flags as functions', () => {
