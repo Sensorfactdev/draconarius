@@ -1,6 +1,6 @@
 {
   "name": "@sensorfactdev/draconarius",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Manage (feature)flags like a Roman soldier\"",
   "main": "./lib/index.js",
   "repository": "https://github.com/Sensorfactdev/draconarius",
@@ -12,7 +12,7 @@
     "docs": "jsdoc2md ./src/index.js > API.md",
     "prepublish": "yarn test; yarn docs;",
     "test-travis": "yarn test && cat ./coverage/lcov.info | coveralls",
-    "build": "babel ./src/index.js --out-file ./lib/index.js --presets @babel/preset-env"
+    "build": "babel ./src --out-dir ./lib --presets @babel/preset-env"
   },
   "jest": {
     "collectCoverageFrom": [
