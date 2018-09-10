@@ -1,4 +1,4 @@
-const isArrayOfStrings = require('../lib/isArrayOfStrings');
+const isArrayOfStrings = require('../src/isArrayOfStrings');
 
 describe('isArrayOfStrings', () => {
   it('should return true for an array of strings', () => expect(isArrayOfStrings(['foo', 'bar'])).toBe(true));

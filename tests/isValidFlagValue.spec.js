@@ -1,4 +1,4 @@
-const isValidFlagValue = require('../lib/isValidFlagValue');
+const isValidFlagValue = require('../src/isValidFlagValue');
 
 describe.only('isValidFlagValue', () => {
   it('should return false for null', () => expect(isValidFlagValue(null)).toBe(false));

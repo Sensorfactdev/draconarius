@@ -9,9 +9,10 @@
   "private": false,
   "scripts": {
     "test": "jest --coverage",
-    "docs": "jsdoc2md ./lib/index.js > API.md",
+    "docs": "jsdoc2md ./src/index.js > API.md",
     "prepublish": "yarn test; yarn docs;",
-    "test-travis": "yarn test && cat ./coverage/lcov.info | coveralls"
+    "test-travis": "yarn test && cat ./coverage/lcov.info | coveralls",
+    "build": "babel ./src/index.js --out-file ./lib/index.js --presets @babel/preset-env"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -27,6 +28,9 @@
     "output": "./reports/junit.xml"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
